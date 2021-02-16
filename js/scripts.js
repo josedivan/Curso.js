@@ -478,4 +478,8 @@ var funcionarios = [
 //  }
 //}
 
-// Exercício 2
+// Aula 24 - Bom
+
+window.onmousemove = function (e) {
+  console.log("Mouse");
+};
