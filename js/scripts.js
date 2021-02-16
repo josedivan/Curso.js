@@ -480,6 +480,50 @@ var funcionarios = [
 
 // Aula 24 - Bom
 
-window.onmousemove = function (e) {
-  console.log("Mouse");
+//window.onmousemove = function (e) {
+//  if (e.pageY < 5) {
+//    alert("Tem certeza que você quer sair da página?");
+//  }
+//};
+
+// AULA 25 - LOCAL STORAGE
+
+//window.localStorage.setItem("nome", "João");
+
+document.getElementById("enviar-nome").onclick = function () {
+  // aguardar o nome digitado no local storage
+  var nome = document.getElementById("nome-usuario").value;
+  localStorage.setItem("nome", nome);
+  // Esconder o formulário
+  document.getElementById("name-field").style.display = "none";
+  // Atualizar e mostrar mensagem de boas-vindas
+  document.getElementById("welcome-text").innerHTML =
+    " Olá " + localStorage.nome + ", Tudo bem ?";
+
+  document.getElementById("not-me").innerHTML =
+    "Não é " + localStorage.nome + "?";
+
+  document.getElementById("welcome-area").style.display = "initial";
+};
+if (localStorage.nome) {
+  // Esconder formulário
+  document.getElementById("name-field").style.display = "none";
+  // Atualizar e mostrar mensagem de boas-vindas
+
+  document.getElementById("welcome-text").innerHTML =
+    "Olá" + localStorage.nome + ", Tudo bem ?";
+
+  document.getElementById("not-me").innerHTML =
+    "Não é " + localStorage.nome + "?";
+
+  document.getElementById("welcome-area").style.display = "initial";
+}
+
+document.getElementById("not-me").onclick = function () {
+  // remover  chave nome do local storage
+  localStorage.removeItem("nome");
+  // esconder a mensagem de boas-vindas
+  document.getElementById("welcome-area").style.display = "none";
+  // mostrar formulário
+  document.getElementById("name-field").style.display = "initial";
 };
