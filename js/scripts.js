@@ -490,40 +490,84 @@ var funcionarios = [
 
 //window.localStorage.setItem("nome", "João");
 
-document.getElementById("enviar-nome").onclick = function () {
-  // aguardar o nome digitado no local storage
-  var nome = document.getElementById("nome-usuario").value;
-  localStorage.setItem("nome", nome);
-  // Esconder o formulário
-  document.getElementById("name-field").style.display = "none";
-  // Atualizar e mostrar mensagem de boas-vindas
-  document.getElementById("welcome-text").innerHTML =
-    " Olá " + localStorage.nome + ", Tudo bem ?";
+//document.getElementById("enviar-nome").onclick = function () {
+//  // aguardar o nome digitado no local storage
+//  var nome = document.getElementById("nome-usuario").value;
+//  localStorage.setItem("nome", nome);
+//  // Esconder o formulário
+//  document.getElementById("name-field").style.display = "none";
+//  // Atualizar e mostrar mensagem de boas-vindas
+//  document.getElementById("welcome-text").innerHTML =
+//    "Olá " + localStorage.nome + ", Tudo bem ?";
+//
+//  document.getElementById("not-me").innerHTML =
+//    "Não é " + localStorage.nome + "?";
+//
+//  document.getElementById("welcome-area").style.display = "initial";
+//};
+//if (localStorage.nome) {
+//  // Esconder formulário
+//  document.getElementById("name-field").style.display = "none";
+//  // Atualizar e mostrar mensagem de boas-vindas
+//
+//  document.getElementById("welcome-text").innerHTML =
+//    "Olá" + localStorage.nome + ", Tudo bem ?";
+//
+//  document.getElementById("not-me").innerHTML =
+//    "Não é " + localStorage.nome + "?";
+//
+//  document.getElementById("welcome-area").style.display = "initial";
+//}
 
-  document.getElementById("not-me").innerHTML =
-    "Não é " + localStorage.nome + "?";
+//document.getElementById("not-me").onclick = function () {
+//  // remover  chave nome do local storage
+//  localStorage.removeItem("nome");
+//  // esconder a mensagem de boas-vindas
+//  document.getElementById("welcome-area").style.display = "none";
+//  // mostrar formulário
+//  document.getElementById("name-field").style.display = "initial";
+//};
 
-  document.getElementById("welcome-area").style.display = "initial";
-};
-if (localStorage.nome) {
-  // Esconder formulário
-  document.getElementById("name-field").style.display = "none";
-  // Atualizar e mostrar mensagem de boas-vindas
+//var data_hoje = new Date();
+//
+//var data_nascimento = "1989-03-03";
+//
+//var ano_nascimento = new Date("1989-03-03").getFullYear();
+//
+//var ano_atual = new Date().getFullYear();
+//
+//var idade = ano_atual - ano_nascimento;
+//console.log(idade);
 
-  document.getElementById("welcome-text").innerHTML =
-    "Olá" + localStorage.nome + ", Tudo bem ?";
+//var data = new Date();
+//
+//var data_enviado = "2020-12-12";
+//
+//var data_de_entrega = new Date("2021-01-01").getDate();
+//
+//var data_atual = new Date().getDate();
+//
+//var quantidade_dias = data_enviado.getDate() - data_atual.getDate();
+//
+//console.log(quantidade_dias);
 
-  document.getElementById("not-me").innerHTML =
-    "Não é " + localStorage.nome + "?";
+//const now = new Date(); // Data de hoje
+//const past = new Date("2014-07-07"); // Outra data no passado
+//const diff = Math.abs(now.getTime() - past.getTime()); // Subtrai uma data pela outra
+//const days = Math.ceil(diff / (1000 * 60 * 60 * 24)); // Divide o total pelo total de milisegundos correspondentes a 1 dia. (1000 milisegundos = 1 segundo).
+//
+//// Mostra a diferença em dias
+//console.log("Entre 07/07/2014 até agora já se passaram " + days + " dias");
+//
 
-  document.getElementById("welcome-area").style.display = "initial";
-}
+var envio = new Date("2018-03-20");
+envio = envio.getTime();
 
-document.getElementById("not-me").onclick = function () {
-  // remover  chave nome do local storage
-  localStorage.removeItem("nome");
-  // esconder a mensagem de boas-vindas
-  document.getElementById("welcome-area").style.display = "none";
-  // mostrar formulário
-  document.getElementById("name-field").style.display = "initial";
-};
+var entrega = new Date("2018-04-06");
+entrega = entrega.getTime();
+
+var dias = (entrega - envio) / 86400000;
+
+console.log(dias);
+
+document.getElementById("dias_entrega").innerHTML = dias + " dias ";
