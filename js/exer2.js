@@ -109,3 +109,21 @@ for (var b = 0; b < vendas_cursos.length; b++) {
   }
 }
 document.getElementById("total_vendas").innerHTML = total_vendas;
+
+// Desafio: Cálculo de intervalo de datas
+
+function dataHora() {
+  var envio = new Date("2018-03-20");
+  envio = envio.getTime();
+
+  var entrega = new Date("2018-04-06");
+  entrega = entrega.getTime();
+
+  var dias = (entrega - envio) / 86400000;
+
+  console.log(dias);
+
+  document.getElementById("dias_entrega").innerHTML = dias + " dias ";
+}
+
+dataHora();

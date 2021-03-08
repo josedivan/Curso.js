@@ -560,14 +560,35 @@ var funcionarios = [
 //console.log("Entre 07/07/2014 até agora já se passaram " + days + " dias");
 //
 
-var envio = new Date("2018-03-20");
-envio = envio.getTime();
+// Vamos soltar duas mensagens do console, com um intervalo de 3 segundos:
+function tempoSegundos() {
+  console.log("Mensagem 1");
 
-var entrega = new Date("2018-04-06");
-entrega = entrega.getTime();
+  window.setTimeout(function () {
+    console.log("Mensagem 2");
+  }, 3000);
+}
 
-var dias = (entrega - envio) / 86400000;
+tempoSegundos();
 
-console.log(dias);
+// Em outro exemplo, podemos mostrar uma animação de loader por 5 segundos:
+function animacaoLoader() {
+  document.getElementById("mostrar-loader").onclick = function () {
+    document.getElementById("spinner-loader").style.display = "initial";
+    window.setTimeout(function () {
+      document.getElementById("spinner-loader").style.display = "none";
+    }, 5000);
+  };
+}
 
-document.getElementById("dias_entrega").innerHTML = dias + " dias ";
+animacaoLoader();
+
+var count = 0;
+var inter = window.setInterval(function () {
+  console.log(count);
+  count++;
+
+  if (count >= 10) {
+    window.clearInterval(inter);
+  }
+}, 1000);
