@@ -581,14 +581,81 @@ function animacaoLoader() {
   };
 }
 
-animacaoLoader();
+//animacaoLoader();
 
-var count = 0;
-var inter = window.setInterval(function () {
-  console.log(count);
-  count++;
+// Vamos limitar a execução do código acima a 10 segundos:
 
-  if (count >= 10) {
-    window.clearInterval(inter);
+function intertempo() {
+  var count = 0;
+  var inter = window.setInterval(function () {
+    console.log(count);
+    count++;
+
+    if (count >= 10) {
+      window.clearInterval(inter);
+    }
+  }, 1000);
+}
+//intertempo();
+
+// Desafio: Relógio
+//Use os métodos do objeto Date e o método setInterval para fazer o relógio abaixo funcionar em tempo real. O id do elemento é "relogio"
+
+function relogio() {
+  window.setInterval(function () {
+    var hora_atual = new Date();
+
+    var horas = hora_atual.getHours();
+    var minutos = hora_atual.getMinutes();
+    var segundos = hora_atual.getSeconds();
+
+    function formt_time(time) {
+      if (time >= 0 && time <= 9) {
+        var formtted_time = time.toString();
+        formtted_time = "0" + formtted_time;
+      } else {
+        var formtted_time = time.toString();
+      }
+      return formtted_time;
+    }
+
+    document.getElementById("relogio").innerHTML =
+      formt_time(horas) +
+      ":" +
+      formt_time(minutos) +
+      ":" +
+      formt_time(segundos);
+  }, 1000);
+}
+//relogio();
+
+function valor_pedagio(categoria) {
+  switch (categoria) {
+    case "1":
+      return 11.22;
+      break;
+
+    case "2":
+      return 22.45;
+      break;
+
+    case "3":
+      return 16.88;
+      break;
+
+    case "4":
+      return 33.65;
+      break;
+    default:
+      return "Categoria não econtrada";
   }
-}, 1000);
+}
+
+var categoria_veiculo = "2";
+console.log(valor_pedagio(categoria_veiculo));
+var categoria_veiculo = "3";
+console.log(valor_pedagio(categoria_veiculo));
+var categoria_veiculo = "3";
+console.log(valor_pedagio(categoria_veiculo));
+var categoria_veiculo = "5";
+console.log(valor_pedagio(categoria_veiculo));
