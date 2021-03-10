@@ -651,11 +651,42 @@ function valor_pedagio(categoria) {
   }
 }
 
-var categoria_veiculo = "2";
-console.log(valor_pedagio(categoria_veiculo));
-var categoria_veiculo = "3";
-console.log(valor_pedagio(categoria_veiculo));
-var categoria_veiculo = "3";
-console.log(valor_pedagio(categoria_veiculo));
-var categoria_veiculo = "5";
-console.log(valor_pedagio(categoria_veiculo));
+//var categoria_veiculo = "2";
+//console.log(valor_pedagio(categoria_veiculo));
+//var categoria_veiculo = "3";
+//console.log(valor_pedagio(categoria_veiculo));
+//var categoria_veiculo = "3";
+//console.log(valor_pedagio(categoria_veiculo));
+//var categoria_veiculo = "5";
+//console.log(valor_pedagio(categoria_veiculo));
+
+var x = 0;
+
+while (x < 10) {
+  //console.log(x);
+  x++;
+
+  if (x == 8) {
+    break;
+  }
+}
+
+var lista = [, 5, 9, 33, 56, 89, 100, 122, 145, 189, 190, 199, 205, 290];
+
+for (a = 0; a < lista.length; a++) {
+  if (lista[a] == 33) {
+    // console.log("Valor encontrado");
+    break;
+  }
+  // console.log("tentativa: " + a);
+}
+
+var num = 0;
+
+while (num < 20) {
+  num++;
+  if (num % 2 == 0) {
+    continue;
+  }
+  console.log(num);
+}
