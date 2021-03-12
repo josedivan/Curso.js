@@ -436,30 +436,30 @@ porque o nome da propriedade contém um traço. Falamos isso na aula sobre objet
 //  }
 //}
 
-var funcionarios = [
-  {
-    nome: "Carlos Henrique da Silva",
-    idade: 45,
-    filhos: ["Mariana Alves da Silva", "Fernanda Alves da Silva"],
-  },
-
-  {
-    nome: "Maria Helena Pereira",
-    idade: 32,
-    filhos: ["Luiz Ricardo Lima"],
-  },
-
-  {
-    nome: "José Feliciano Maia",
-    idade: 39,
-    filhos: [
-      "Felipe Ferreira Maia",
-      "Fábio Ferreira Maia",
-      "João Ferreira Maia",
-    ],
-  },
-];
-
+//var funcionarios = [
+//  {
+//    nome: "Carlos Henrique da Silva",
+//    idade: 45,
+//    filhos: ["Mariana Alves da Silva", "Fernanda Alves da Silva"],
+//  },
+//
+//  {
+//    nome: "Maria Helena Pereira",
+//    idade: 32,
+//    filhos: ["Luiz Ricardo Lima"],
+//  },
+//
+//  {
+//    nome: "José Feliciano Maia",
+//    idade: 39,
+//    filhos: [
+//      "Felipe Ferreira Maia",
+//      "Fábio Ferreira Maia",
+//      "João Ferreira Maia",
+//    ],
+//  },
+//];
+//
 //var list_element = document.getElementById("filhos");
 //list_element.innerHTML = "";
 //
@@ -561,132 +561,169 @@ var funcionarios = [
 //
 
 // Vamos soltar duas mensagens do console, com um intervalo de 3 segundos:
-function tempoSegundos() {
-  console.log("Mensagem 1");
+//function tempoSegundos() {
+//  console.log("Mensagem 1");
+//
+//  window.setTimeout(function () {
+//    console.log("Mensagem 2");
+//  }, 3000);
+//}
+//
+//tempoSegundos();
+//
+//// Em outro exemplo, podemos mostrar uma animação de loader por 5 segundos:
+//function animacaoLoader() {
+//  document.getElementById("mostrar-loader").onclick = function () {
+//    document.getElementById("spinner-loader").style.display = "initial";
+//    window.setTimeout(function () {
+//      document.getElementById("spinner-loader").style.display = "none";
+//    }, 5000);
+//  };
+//}
+//
+////animacaoLoader();
+//
+//// Vamos limitar a execução do código acima a 10 segundos:
+//
+//function intertempo() {
+//  var count = 0;
+//  var inter = window.setInterval(function () {
+//    console.log(count);
+//    count++;
+//
+//    if (count >= 10) {
+//      window.clearInterval(inter);
+//    }
+//  }, 1000);
+//}
+////intertempo();
+//
+//// Desafio: Relógio
+////Use os métodos do objeto Date e o método setInterval para fazer o relógio //abaixo funcionar em tempo real. O id do elemento é "relogio"
+//
+//function relogio() {
+//  window.setInterval(function () {
+//    var hora_atual = new Date();
+//
+//    var horas = hora_atual.getHours();
+//    var minutos = hora_atual.getMinutes();
+//    var segundos = hora_atual.getSeconds();
+//
+//    function formt_time(time) {
+//      if (time >= 0 && time <= 9) {
+//        var formtted_time = time.toString();
+//        formtted_time = "0" + formtted_time;
+//      } else {
+//        var formtted_time = time.toString();
+//      }
+//      return formtted_time;
+//    }
+//
+//    document.getElementById("relogio").innerHTML =
+//      formt_time(horas) +
+//      ":" +
+//      formt_time(minutos) +
+//      ":" +
+//      formt_time(segundos);
+//  }, 1000);
+//}
+////relogio();
+//
+//function valor_pedagio(categoria) {
+//  switch (categoria) {
+//    case "1":
+//      return 11.22;
+//      break;
+//
+//    case "2":
+//      return 22.45;
+//      break;
+//
+//    case "3":
+//      return 16.88;
+//      break;
+//
+//    case "4":
+//      return 33.65;
+//      break;
+//    default:
+//      return "Categoria não econtrada";
+//  }
+//}
+//
+////var categoria_veiculo = "2";
+////console.log(valor_pedagio(categoria_veiculo));
+////var categoria_veiculo = "3";
+////console.log(valor_pedagio(categoria_veiculo));
+////var categoria_veiculo = "3";
+////console.log(valor_pedagio(categoria_veiculo));
+////var categoria_veiculo = "5";
+////console.log(valor_pedagio(categoria_veiculo));
+//
+//var x = 0;
+//
+//while (x < 10) {
+//  //console.log(x);
+//  x++;
+//
+//  if (x == 8) {
+//    break;
+//  }
+//}
+//
+//var lista = [, 5, 9, 33, 56, 89, 100, 122, 145, 189, 190, 199, 205, 290];
+//
+//for (a = 0; a < lista.length; a++) {
+//  if (lista[a] == 33) {
+//    // console.log("Valor encontrado");
+//    break;
+//  }
+//  // console.log("tentativa: " + a);
+//}
+//
+//var num = 0;
+//
+//while (num < 20) {
+//  num++;
+//  if (num % 2 == 0) {
+//    continue;
+//  }
+//  //console.log(num);
+//}
+//
+//var num = 0;
+//
+//while (num < 20) {
+//  num++;
+//  if (num % 2 == 1) {
+//    continue;
+//  }
+//  //console.log("Esses são os numeros pares " + num);
+//}
 
-  window.setTimeout(function () {
-    console.log("Mensagem 2");
-  }, 3000);
-}
+//// Aula 30 - formulário
 
-tempoSegundos();
+//document.getElementById("mostrar_opcao").onclick = function () {
+//  var campo_select = document.getElementById("options");
+//  var indice_selecionado = campo_select.options.selectedIndex;
+//  var valor_selecionado = campo_select.options[indice_selecionado].innerHTML;
+//  document.getElementById("opcao_selecionada").innerHTML = valor_selecionado;
 
-// Em outro exemplo, podemos mostrar uma animação de loader por 5 segundos:
-function animacaoLoader() {
-  document.getElementById("mostrar-loader").onclick = function () {
-    document.getElementById("spinner-loader").style.display = "initial";
-    window.setTimeout(function () {
-      document.getElementById("spinner-loader").style.display = "none";
-    }, 5000);
-  };
-}
+//var valor_selecionado = document.getElementById("options").value;
+//document.getElementById("opcao_selecionada").innerHTML = valor_selecionado;
+//};//
 
-//animacaoLoader();
+// Rdio buttons//
 
-// Vamos limitar a execução do código acima a 10 segundos:
+document.getElementById("mostrar_radio").onclick = function () {
+  var radio = document.getElementsByName("genero");
+  var radio_selected;
 
-function intertempo() {
-  var count = 0;
-  var inter = window.setInterval(function () {
-    console.log(count);
-    count++;
-
-    if (count >= 10) {
-      window.clearInterval(inter);
+  for (var a = 0; a < radio.length; a++) {
+    if (radio[a].checked) {
+      radio_selected = radio[a].value;
+      break;
     }
-  }, 1000);
-}
-//intertempo();
-
-// Desafio: Relógio
-//Use os métodos do objeto Date e o método setInterval para fazer o relógio abaixo funcionar em tempo real. O id do elemento é "relogio"
-
-function relogio() {
-  window.setInterval(function () {
-    var hora_atual = new Date();
-
-    var horas = hora_atual.getHours();
-    var minutos = hora_atual.getMinutes();
-    var segundos = hora_atual.getSeconds();
-
-    function formt_time(time) {
-      if (time >= 0 && time <= 9) {
-        var formtted_time = time.toString();
-        formtted_time = "0" + formtted_time;
-      } else {
-        var formtted_time = time.toString();
-      }
-      return formtted_time;
-    }
-
-    document.getElementById("relogio").innerHTML =
-      formt_time(horas) +
-      ":" +
-      formt_time(minutos) +
-      ":" +
-      formt_time(segundos);
-  }, 1000);
-}
-//relogio();
-
-function valor_pedagio(categoria) {
-  switch (categoria) {
-    case "1":
-      return 11.22;
-      break;
-
-    case "2":
-      return 22.45;
-      break;
-
-    case "3":
-      return 16.88;
-      break;
-
-    case "4":
-      return 33.65;
-      break;
-    default:
-      return "Categoria não econtrada";
   }
-}
-
-//var categoria_veiculo = "2";
-//console.log(valor_pedagio(categoria_veiculo));
-//var categoria_veiculo = "3";
-//console.log(valor_pedagio(categoria_veiculo));
-//var categoria_veiculo = "3";
-//console.log(valor_pedagio(categoria_veiculo));
-//var categoria_veiculo = "5";
-//console.log(valor_pedagio(categoria_veiculo));
-
-var x = 0;
-
-while (x < 10) {
-  //console.log(x);
-  x++;
-
-  if (x == 8) {
-    break;
-  }
-}
-
-var lista = [, 5, 9, 33, 56, 89, 100, 122, 145, 189, 190, 199, 205, 290];
-
-for (a = 0; a < lista.length; a++) {
-  if (lista[a] == 33) {
-    // console.log("Valor encontrado");
-    break;
-  }
-  // console.log("tentativa: " + a);
-}
-
-var num = 0;
-
-while (num < 20) {
-  num++;
-  if (num % 2 == 0) {
-    continue;
-  }
-  console.log(num);
-}
+  document.getElementById("radio_selecionado").innerHTML = radio_selected;
+};
