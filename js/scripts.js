@@ -715,15 +715,34 @@ porque o nome da propriedade contém um traço. Falamos isso na aula sobre objet
 
 // Rdio buttons//
 
-document.getElementById("mostrar_radio").onclick = function () {
-  var radio = document.getElementsByName("genero");
-  var radio_selected;
+//document.getElementById("mostrar_radio").onclick = function () {
+//  var radio = document.getElementsByName("genero");
+//  var radio_selected;
+//
+//  for (var a = 0; a < radio.length; a++) {
+//    if (radio[a].checked) {
+//      radio_selected = radio[a].value;
+//      break;
+//    }
+//  }
+//  document.getElementById("radio_selecionado").innerHTML = radio_selected;
+//};
 
-  for (var a = 0; a < radio.length; a++) {
-    if (radio[a].checked) {
-      radio_selected = radio[a].value;
-      break;
-    }
-  }
-  document.getElementById("radio_selecionado").innerHTML = radio_selected;
+//document.getElementById("mostrar_check").onclick = function () {
+//  document.getElementById("check_selecionado").innerHTML = "";
+//  var check = document.getElementsByName("interesse");
+//  for (var b = 0; b < check.length; b++) {
+//    if (check[b].checked) {
+//      document.getElementById("check_selecionado").innerHTML +=
+//        "<li>" + check[b].value + "</li>";
+//    }
+//  }
+//};
+
+// DATE
+
+document.getElementById("mostrar_data").onclick = function () {
+  var data_select = document.getElementById("data_evento").value;
+  var data_completa = new Date(data_select);
+  document.getElementById("data_selecionada").innerHTML = data_completa;
 };
