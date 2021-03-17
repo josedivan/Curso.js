@@ -44,3 +44,86 @@ document.getElementById("confirmar_pedido").onclick = function () {
     );
   }
 };
+
+//04)
+
+var Veiculo = [
+  {
+    placa: "AAA-0198",
+    categoria: "1",
+  },
+
+  {
+    placa: "HBP-2837",
+    categoria: "2",
+  },
+
+  {
+    placa: "PLQ-0928",
+    categoria: "4",
+  },
+
+  {
+    placa: "KQE-2093",
+    categoria: "5",
+  },
+
+  {
+    placa: "AMR-9087",
+    categoria: "5",
+  },
+
+  {
+    placa: "BQE-8111",
+    categoria: "3",
+  },
+
+  {
+    placa: "GXL-9001",
+    categoria: "2",
+  },
+
+  {
+    placa: "KPM-7740",
+    categoria: "1",
+  },
+];
+
+function valor_a_pagar(Veiculo) {
+  switch (Veiculo.categoria) {
+    case "1":
+      return 11.22;
+      break;
+
+    case "2":
+      return 22.45;
+      break;
+
+    case "3":
+      return 16.88;
+      break;
+
+    case "4":
+      return 33.65;
+      break;
+
+    default:
+      console.log(
+        " Veiculo de placa " +
+          Veiculo.placa +
+          " Não fez o pagamento por erro de categoria " +
+          Veiculo.categoria +
+          "",
+      );
+      return 0;
+  }
+}
+
+var total_arrecado = 0;
+for (var a = 0; a < Veiculo.length; a++) {
+  total_arrecado += valor_a_pagar(Veiculo[a]);
+}
+
+document.getElementById("faturamento_total").innerHTML = total_arrecado.toFixed(
+  2,
+);
