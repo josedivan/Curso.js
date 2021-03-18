@@ -45,6 +45,62 @@ document.getElementById("confirmar_pedido").onclick = function () {
   }
 };
 
+// 03)
+
+var iniciado = false,
+  hora_inicio,
+  hora_atual,
+  tempo_passado,
+  init_cronometro,
+  horas,
+  minutos,
+  segundos,
+  milisegundos;
+
+document.getElementById("comecar_parar").onclick = function () {
+  if (!iniciado) {
+    iniciado = true;
+    document.getElementById("comecar_parar").innerHTML = "parar";
+    // começar o cronômetro
+    if (!hora_inicio) {
+      hora_inicio = new Date().getTime();
+    } else {
+      hora_inicio = new Date().getTime() - tempo_passado;
+    }
+
+    init_cronometro = window.setInterval(function () {
+      hora_atual = new Date().getTime();
+      tempo_passado = hora_atual - hora_inicio;
+      horas = Math.floor(tempo_passado / 3600000);
+      resto = tempo_passado - horas * 3600000;
+      minutos = Math.floor(resto / 60000);
+      resto -= minutos * 60000;
+      segundos = Math.floor(resto / 1000);
+      resto -= segundos * 1000;
+      milisegundos = resto;
+
+      document.getElementById("cronometro").innerHTML =
+        add_left_zero(horas) +
+        ":" +
+        add_left_zero(minutos) +
+        ":" +
+        add_left_zero(segundos) +
+        " " +
+        add_left_zero(milisegundos);
+    }, 10);
+  } else {
+    window.clearInterval(init_cronometro);
+    iniciado = false;
+    document.getElementById("comecar_parar").innerHTML = "comecar";
+  }
+};
+
+document.getElementById("zerar").onclick = function () {
+  tempo_passado = 0;
+  hora_inicio = new Date().getTime();
+  document.getElementById("cronometro").innerHTML = "00:00:00 000";
+};
+
 //04)
 
 var Veiculo = [
